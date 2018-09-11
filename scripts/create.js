@@ -13,13 +13,13 @@ if (commands.length === 0 || commands[0] === '') {
   process.exit(1);
 }
 
-createElmApp(commands[0]);
+createElmApp(commands[0], commands[1]);
 
-function createElmApp(name) {
-  console.log('\nCreating ' + name + ' project...\n');
+function createElmApp(template, name) {
+  console.log('\nCreating ' + template + ' ' + name + ' project...\n');
 
   const root = path.resolve(name);
-  const template = path.join(__dirname, '../template');
+  const template = path.join(__dirname, '../' + template);
 
   if (!fs.existsSync(name)) {
     try {

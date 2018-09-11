@@ -164,7 +164,6 @@ function handleErrors(errors) {
   );
 
   // Only show the first error.
-  ErrorOverlay.reportBuildError(formatted.errors[0]);
 
   // Also log them to the console.
   if (typeof console !== 'undefined' && typeof console.error === 'function') {

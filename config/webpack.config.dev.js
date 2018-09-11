@@ -46,9 +46,6 @@ module.exports = {
     // require.resolve('react-dev-utils/webpackHotDevClient'),
     require.resolve('../scripts/utils/webpackHotDevClient'),
 
-    // Errors should be considered fatal in development
-    require.resolve('react-error-overlay'),
-
     paths.appIndexJs
   ],
   output: {
@@ -174,7 +171,7 @@ module.exports = {
               verbose: true,
               // If ELM_DEBUGGER was set to "false", disable it. Otherwise
               // for invalid values, "true" and as a default, enable it
-              debug: process.env.ELM_DEBUGGER === 'false' ? false : true,
+              debug: process.env.ELM_DEBUGGER === 'true' ? true : false,
               pathToElm: paths.elm,
               forceWatch: true
             }
