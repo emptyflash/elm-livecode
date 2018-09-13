@@ -19,11 +19,11 @@ function createElmApp(template, name) {
   console.log('\nCreating ' + template + ' ' + name + ' project...\n');
 
   const root = path.resolve(name);
-  const template = path.join(__dirname, '../' + template);
+  const templatePath = path.join(__dirname, '../' + template);
 
   if (!fs.existsSync(name)) {
     try {
-      copySync(template, root);
+      copySync(templatePath, root);
       fs.renameSync(
         path.resolve(root, 'gitignore'),
         path.resolve(root, '.gitignore')

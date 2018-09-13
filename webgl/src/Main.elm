@@ -72,6 +72,16 @@ perspective size =
         1.0
 
 
+clamp : Float -> Float -> Float -> Float
+clamp x min max =
+    if x < min then
+        min
+    else if x > max then
+        max
+    else
+        x
+
+
 type alias Uniforms =
     { size : Vec2
     , mouse : Vec2
@@ -119,8 +129,12 @@ fragmentShader =
             return x - modulus * (floor(x / modulus));
         }
 
+        float rand(vec2 co){
+            return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+        }
+
         void main() {
-            //gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+            gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
         }
     |]
 
