@@ -4,7 +4,8 @@
   "version": "0.0.0-development",
   "author": "Eduard Kyvenko <eduard.kyvenko@gmail.com>",
   "bin": {
-    "elm-livecode": "./bin/elm-app-cli.js"
+    "elm-livecode": "./bin/elm-app-cli.js",
+    "elc": "./bin/elm-app-cli.js"
   },
   "bugs": {
     "url": "https://github.com/halfzebra/create-elm-app/issues",

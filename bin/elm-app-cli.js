@@ -27,8 +27,23 @@ if (commands.length === 0) {
   process.exit(1);
 }
 
-const script = commands[0];
+let script = commands[0];
 const scriptArgs = commands.splice(1);
+
+script = (() => {
+  switch (script) {
+    case 'c':
+      return 'create';
+    case 's':
+      return 'start';
+    case 'b':
+      return 'build';
+    case 'e':
+      return 'eject';
+    default:
+      return script;
+  }
+})();
 
 switch (script) {
   case 'create':
